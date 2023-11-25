@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  color: red;
+  div {
+    padding-top: 25px;
+    a {
+      color: black;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  }
+}
