@@ -1,15 +1,37 @@
+$greenColor: rgb(4, 238, 4);
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
+
 .navbar {
+  h2 {
+    margin-left: 10px;
+    font-size: 25px;
+  }
   width: 100%;
-  background-color: blue;
+  background-color: $greenColor;
   display: flex;
   justify-content: space-between;
-  color: red;
+  color: white;
   div {
     padding-top: 25px;
-    a {
-      color: black;
+    button {
+      overflow: hidden;
+      font-weight: 700;
+      font-family: Poppins;
+      background-color: rgb(0, 0, 0, 0);
+      border: none;
+      font-size: 22px;
+      color: white;
       text-decoration: none;
       margin-right: 10px;
+
+      // Dodaj transition dla animacji
+      transition: all 0.3s ease;
+
+      &:hover {
+        // Dodaj efekt przesunięcia (transformacja)
+        transform: translateX(5px); // Możesz dostosować wartość według potrzeb
+        border-bottom: 1px solid white;
+      }
     }
   }
 }

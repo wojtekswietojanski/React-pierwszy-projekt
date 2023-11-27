@@ -1,9 +1,11 @@
-import FoodProducts from "./foodProducts";
+import Products from "./foodProducts";
 import "./Styling/Home/home.css";
 import { useState, useEffect } from "react";
 
 const Home = () => {
   const [elements, setElements] = useState([]);
+  const [foodObjects, setFoodObjects] = useState([]);
+
   var elementsContainer = [];
 
   function createSortedArrayFromLocalStorage() {
@@ -33,6 +35,7 @@ const Home = () => {
     var rok = dzisiaj.getFullYear();
 
     // Formatowanie z zerowaniem dla jednocyfrowych wartości
+    if (dzien < 10) dzien = "0" + dzien;
     if (minuta < 10) minuta = "0" + minuta;
     if (godzina < 10) godzina = "0" + godzina;
     if (miesiac < 10) miesiac = "0" + miesiac;
@@ -75,8 +78,6 @@ const Home = () => {
     }
   }
 
-  const [foodObjects, setFoodObjects] = useState([]);
-
   class FoodObject {
     constructor(name, kcal, proteins, carbs, fats, time, date, id) {
       this.name = name;
@@ -103,7 +104,7 @@ const Home = () => {
   }
 
   const elementsToObjects = () => {
-    setFoodObjects([]); // Assuming setFoodObjects is a state updater function
+    setFoodObjects([]);
     var objectContainer = [];
 
     elements.map((element) => {
@@ -168,7 +169,7 @@ const Home = () => {
         placeholder="Zawartość tłuszczy w gramach"
       />
       <button onClick={addElementHandler}>DODAJ</button>
-      <FoodProducts foodObjects={foodObjects} handleDelete={handleDelete} />
+      <Products foodObjects={foodObjects} handleDelete={handleDelete} />
     </div>
   );
 };

@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const FoodProducts = ({ foodObjects, handleDelete }) => {
+const Products = ({ foodObjects, handleDelete }) => {
+  const [foodObjectsToday, setFoodObjectsToday] = useState([]);
+
+  useEffect(() => {
+    filterToday();
+  }, [foodObjects]);
+
+  const filterToday = () => {
+    var foodObjectsTodayContainer = [];
+    foodObjects.map((foodObject) => {
+      var today = new Date();
+      var day = today.getDate();
+      var month = today.getMonth() + 1;
+      var year = today.getFullYear();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + day;
+      }
+
+      var todayDate = day + "." + month + "." + year;
+
+      if (foodObject.date == todayDate) {
+        foodObjectsTodayContainer.push(foodObject);
+      }
+      setFoodObjectsToday(foodObjectsTodayContainer);
+    });
+  };
+
   return (
     <div className="addedElementsWrapper">
       {foodObjects.map((foodObject) => (
@@ -19,4 +48,4 @@ const FoodProducts = ({ foodObjects, handleDelete }) => {
   );
 };
 
-export default FoodProducts;
+export default Products;
