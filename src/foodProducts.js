@@ -1,11 +1,18 @@
-import "./Styling/Home/home.css";
-const FoodProducts = ({ elements, handleDelete }) => {
+import React from "react";
+
+const FoodProducts = ({ foodObjects, handleDelete }) => {
   return (
     <div className="addedElementsWrapper">
-      {elements.map((element) => (
-        <div className="addedElement" key={element.id} id={element.id}>
-          {element.content}
-          <button onClick={() => handleDelete(element.id)}>delete</button>
+      {foodObjects.map((foodObject) => (
+        <div className="addedElement" key={foodObject.id} id={foodObject.id}>
+          <p>{foodObject.name}</p>
+          <p>{foodObject.kcal}</p>
+          <p>{foodObject.proteins}</p>
+          <p>{foodObject.carbs}</p>
+          <p>{foodObject.fats}</p>
+          <p>{foodObject.time}</p>
+          <p>{foodObject.date}</p>
+          <button onClick={() => handleDelete(foodObject.id)}>delete</button>
         </div>
       ))}
     </div>

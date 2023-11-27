@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
+$greenColor: rgb(4, 238, 4);
+
+$dataFont: Bebas Neue;
+
 .home {
   box-sizing: border-box;
   display: flex;
@@ -7,7 +12,7 @@
   padding: 10px;
   width: 100%;
   color: blue;
-  background-color: red;
+  // // background-color: white;
   display: flex;
   flex-wrap: wrap;
   border-radius: 0px 0px 20px 20px;
@@ -16,10 +21,36 @@
 .addedElementsWrapper {
   width: 100%;
   .addedElement {
+    position: relative;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    background-color: greenyellow;
+    background: rgba(18, 244, 10, 0.65);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: black;
     min-height: 20px;
+    border-radius: 20px;
+    p {
+      font-family: $dataFont;
+      color: white;
+      font-size: 20px;
+      width: 10%;
+      text-align: center;
+    }
+    button {
+      border: none;
+      border-radius: 0px 18px 18px 0px;
+      width: fit-content;
+      padding: 10px;
+      font-family: $dataFont;
+      color: $greenColor;
+      font-size: 20px;
+      background-color: white;
+    }
   }
 }
