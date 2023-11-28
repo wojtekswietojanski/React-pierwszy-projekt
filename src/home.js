@@ -59,20 +59,16 @@ const Home = ({ foodObjects, setFoodObjects }) => {
   function sortKeys() {
     var keys = Object.keys(localStorage);
 
-    // Sortuj klucze
     keys.sort(function (a, b) {
       return a.localeCompare(b);
     });
 
-    // Zmieniaj wartości kluczy na liczby od 1 w górę
     for (var i = 0; i < keys.length; i++) {
       var klucz = keys[i];
       var wartosc = localStorage.getItem(klucz);
 
-      // Usuń stary klucz
       localStorage.removeItem(klucz);
 
-      // Ustaw nowy klucz z wartością i+1
       localStorage.setItem((i + 1).toString(), wartosc);
     }
   }

@@ -162,6 +162,21 @@ const ThisMonth = ({ foodObjects }) => {
     setFoodObjectMaximum(new FoodObjectData(kcal, proteins, carbs, fats));
   };
 
+  useEffect(() => {
+    if (!Math.round(foodObjectsThisMonthAverage.kcal)) {
+      foodObjectsThisMonthAverage.kcal = 0;
+    }
+    if (!Math.round(foodObjectsThisMonthAverage.proteins)) {
+      foodObjectsThisMonthAverage.proteins = 0;
+    }
+    if (!Math.round(foodObjectsThisMonthAverage.carbs)) {
+      foodObjectsThisMonthAverage.carbs = 0;
+    }
+    if (!Math.round(foodObjectsThisMonthAverage.fats)) {
+      foodObjectsThisMonthAverage.fats = 0;
+    }
+  }, [foodObjectsThisMonthAverage]);
+
   return (
     <div id="thisMonth">
       <div id="kcalChart">

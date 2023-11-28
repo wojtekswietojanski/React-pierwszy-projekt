@@ -39,11 +39,17 @@ const LineChart = ({ foodObjectsDaysInMonth }) => {
   });
 
   useEffect(() => {
-    const labels = foodObjectsDaysInMonth.map((item) => item.day);
-    const proteinData = foodObjectsDaysInMonth.map((item) => item.proteins);
-    const carbsData = foodObjectsDaysInMonth.map((item) => item.carbs);
-    const fatsData = foodObjectsDaysInMonth.map((item) => item.fats);
-
+    var labels = foodObjectsDaysInMonth.map((item) => item.day);
+    var proteinData = foodObjectsDaysInMonth.map((item) => item.proteins);
+    var carbsData = foodObjectsDaysInMonth.map((item) => item.carbs);
+    var fatsData = foodObjectsDaysInMonth.map((item) => item.fats);
+    console.log(labels);
+    if (labels.length == 0) {
+      labels = [0, 1];
+      proteinData = [0, 0];
+      carbsData = [0, 0];
+      fatsData = [0, 0];
+    }
     setData({
       ...data,
       labels: labels,

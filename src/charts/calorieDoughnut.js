@@ -33,7 +33,7 @@ const CalorieDoughnut = ({ foodObjectsTodaySumarized }) => {
     setCalorieDoughnutData({
       labels: [
         "dzisiejsza podaż kalori",
-        "Sugerowane dzienne zapotrzebowanie kaloryczne",
+        "Sugerowane dzienne zapotrzebowanie kaloryczne 2000kcal",
       ],
       datasets: [
         {

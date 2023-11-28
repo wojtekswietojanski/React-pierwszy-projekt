@@ -25,6 +25,11 @@ const NutritionsDistribution = ({ foodObjectsDaysInMonth }) => {
       container[1] += DayInMonth.carbs;
       container[2] += DayInMonth.fats;
     });
+    if (container[0] == 0 && container[1] == 0 && container[2] == 0) {
+      container[0] = 1;
+      container[1] = 1;
+      container[2] = 1;
+    }
     setCalorieNutritionsDistribution({
       labels: ["białko", "węglowodany", "tłuszcze"],
       datasets: [
