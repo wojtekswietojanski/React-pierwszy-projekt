@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Styling/Today/today.css";
+import CalorieDoughnut from "./charts/calorieDoughnut";
 
 const Today = ({ foodObjects }) => {
   const [foodObjectsToday, setFoodObjectsToday] = useState([]);
@@ -106,7 +107,11 @@ const Today = ({ foodObjects }) => {
 
   return (
     <div className="todayDivContainer">
-      <div className="todayDiv"></div>
+      <div className="todayDiv">
+        <CalorieDoughnut
+          foodObjectsTodaySumarized={foodObjectsTodaySumarized}
+        ></CalorieDoughnut>
+      </div>
       <div className="todayDiv">
         <p>
           Dziś zjadłeś <b>{foodObjectsTodaySumarized.kcal}</b> kalorii,{" "}

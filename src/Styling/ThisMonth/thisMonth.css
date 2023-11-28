@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
+#thisMonth {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 25px;
+}
+#thisMonth #kcalChart {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 1px 3px 5px black;
+  margin-bottom: 25px;
+}
+#thisMonth .monthSmallerComponents {
+  box-sizing: border-box;
+  width: 49%;
+  padding: 10px;
+  box-shadow: 1px 3px 5px black;
+}
+#thisMonth .monthSmallerComponents:first-child {
+  margin-right: 1%;
+}
+#thisMonth .monthSmallerComponents p b {
+  color: rgb(4, 238, 4);
+}/*# sourceMappingURL=thisMonth.css.map */

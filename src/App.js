@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Home from "./home";
 import Today from "./today";
+import ThisMonth from "./thisMonth";
 
 function App() {
   const [foodObjects, setFoodObjects] = useState([]);
@@ -19,6 +20,7 @@ function App() {
         <Home foodObjects={foodObjects} setFoodObjects={setFoodObjects} />
       )}
       {currentPage == 2 && <Today foodObjects={foodObjects} />}
+      {currentPage == 3 && <ThisMonth foodObjects={foodObjects} />}
     </div>
   );
 }
