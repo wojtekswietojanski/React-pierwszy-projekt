@@ -1,0 +1,27 @@
+$greenColor: rgb(4, 238, 4);
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
+
+.todayDivContainer {
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .todayDiv {
+    color: black;
+    margin: 10px 10px 0 0;
+    padding: 10px;
+    width: 47%;
+    min-width: 500px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    p {
+      font-size: 20px;
+      font-family: Bebas Neue;
+      b {
+        color: $greenColor;
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Home from "./home";
+import Today from "./today";
 
 function App() {
+  const [foodObjects, setFoodObjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   const changePage = (index) => {
@@ -13,7 +15,10 @@ function App() {
   return (
     <div className="App">
       <Navbar changePage={changePage}></Navbar>
-      {currentPage == 1 && <Home />}
+      {currentPage == 1 && (
+        <Home foodObjects={foodObjects} setFoodObjects={setFoodObjects} />
+      )}
+      {currentPage == 2 && <Today foodObjects={foodObjects} />}
     </div>
   );
 }

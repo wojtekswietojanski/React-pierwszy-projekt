@@ -2,9 +2,8 @@ import Products from "./foodProducts";
 import "./Styling/Home/home.css";
 import { useState, useEffect } from "react";
 
-const Home = () => {
+const Home = ({ foodObjects, setFoodObjects }) => {
   const [elements, setElements] = useState([]);
-  const [foodObjects, setFoodObjects] = useState([]);
 
   var elementsContainer = [];
 

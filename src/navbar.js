@@ -8,8 +8,7 @@ const Navbar = ({ changePage }) => {
       <div>
         <button onClick={() => changePage(1)}>Produkty</button>
         <button onClick={() => changePage(2)}>Raport z dziś</button>
-        <button onClick={() => changePage(3)}>Raport z tygodnia</button>
-        <button onClick={() => changePage(4)}>Raport z 30 dni</button>
+        <button onClick={() => changePage(3)}>Raport z 30 dni</button>
       </div>
     </nav>
   );
