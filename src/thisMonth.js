@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Styling/ThisMonth/thisMonth.css";
 import NutritionsDistribution from "./charts/nutritionsDistribution";
+import LineCharts from "./charts/lineChart";
 
 const ThisMonth = ({ foodObjects }) => {
   const [foodObjectsThisMonth, setFoodObjectsThisMonth] = useState([]);
@@ -46,6 +47,7 @@ const ThisMonth = ({ foodObjects }) => {
 
   useEffect(() => {
     calculateMaximum();
+    console.log(foodObjectsDaysInMonth);
   }, [foodObjectsThisMonthAverage]);
 
   const filterData = () => {
@@ -162,7 +164,9 @@ const ThisMonth = ({ foodObjects }) => {
 
   return (
     <div id="thisMonth">
-      <div id="kcalChart"></div>
+      <div id="kcalChart">
+        <LineCharts foodObjectsDaysInMonth={foodObjectsDaysInMonth} />
+      </div>
       <div className="monthSmallerComponents">
         <NutritionsDistribution
           foodObjectsDaysInMonth={foodObjectsDaysInMonth}
