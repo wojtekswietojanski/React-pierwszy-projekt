@@ -9,6 +9,10 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const changePage = (index) => {
+    var hamburgerContainer = document.querySelector(".hamburgerContainer");
+    var mobileMenu = document.querySelector(".mobileMenu");
+    hamburgerContainer.classList.toggle("hamburgerActive");
+    mobileMenu.classList.toggle("menuActive");
     if (index === 1 || index === 2 || index === 3 || index === 4) {
       setCurrentPage(index);
     }

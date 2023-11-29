@@ -6,6 +6,7 @@ $greenColor: rgb(4, 238, 4);
   position: fixed;
   top: 0px;
   width: 100%;
+  max-width: 1200px;
   background-color: $greenColor;
   display: flex;
   justify-content: space-between;
@@ -13,6 +14,7 @@ $greenColor: rgb(4, 238, 4);
   box-shadow: 0px 0px 10px black;
   .hamburgerContainer {
     display: none;
+    animation: none;
   }
   .mobileMenu {
     display: none;
@@ -66,6 +68,7 @@ $greenColor: rgb(4, 238, 4);
       width: 100%;
       background-color: white;
       position: absolute;
+      transition: all 0.3s ease;
     }
     .bar0 {
       top: 5px;
@@ -80,10 +83,42 @@ $greenColor: rgb(4, 238, 4);
       display: none;
     }
     .mobileMenu {
-      display: block;
-      height: 200px;
+      display: none;
+      flex-direction: column;
       width: 100%;
-      background-color: red;
+      background-color: $greenColor;
+      button {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-family: Poppins;
+        background-color: rgb(0, 0, 0, 0);
+        border: none;
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: translateY(-5px);
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+    .mobileMenu.menuActive {
+      display: flex;
+    }
+    .hamburgerContainer.hamburgerActive {
+      .bar1 {
+        display: none;
+        transition: all 0.3s ease;
+      }
+      .bar0 {
+        transform: rotate(45deg) translate(5px, 12px);
+        transition: all 0.3s ease;
+      }
+      .bar2 {
+        transform: rotate(-45deg) translate(5px, -12px);
+        transition: all 0.3s ease;
+      }
     }
   }
 }
