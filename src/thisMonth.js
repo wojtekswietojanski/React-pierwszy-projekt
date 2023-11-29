@@ -47,7 +47,6 @@ const ThisMonth = ({ foodObjects }) => {
 
   useEffect(() => {
     calculateMaximum();
-    console.log(foodObjectsDaysInMonth);
   }, [foodObjectsThisMonthAverage]);
 
   const filterData = () => {

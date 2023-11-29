@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
 .home {
+  margin-top: 85px;
+  min-width: 350px;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -7,10 +9,50 @@
   justify-content: center;
   padding: 10px;
   width: 100%;
-  color: blue;
   display: flex;
   flex-wrap: wrap;
   border-radius: 0px 0px 20px 20px;
+  /* Firefox */
+}
+.home input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px grey solid;
+}
+.home button {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px grey solid;
+  background-color: rgba(4, 238, 4, 0.5);
+  position: relative;
+  overflow: hidden;
+  /* Animacja gradientu przy najechaniu na przycisk */
+}
+.home button:hover {
+  background-color: rgba(4, 238, 4, 0);
+}
+.home button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+.home button:hover::before {
+  opacity: 1;
+}
+.home input::-webkit-outer-spin-button,
+.home input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.home input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .addedElementsWrapper {
@@ -52,4 +94,77 @@
 }
 .addedElementsWrapper .addedElement button:hover {
   color: red;
+}
+.addedElementsWrapper .addedElement div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.addedElementsWrapper .addedElement div p,
+.addedElementsWrapper .addedElement div button {
+  font-size: 17px;
+}
+.addedElementsWrapper .addedElement div .expand {
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+.addedElementsWrapper .addedElement div .expand:hover {
+  border-bottom: 2px white solid;
+}
+.addedElementsWrapper .addedElement div .expand::before {
+  opacity: 0;
+}
+.addedElementsWrapper .addedElement .expandedProduct {
+  transform: translateX(-100%);
+  animation: slideIn 0.5s ease-out forwards;
+  display: none;
+  width: 100%;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.addedElementsWrapper .addedElement:nth-child(even) {
+  animation: slideInLeft 0.5s ease-in;
+}
+.addedElementsWrapper .addedElement:nth-child(odd) {
+  animation: slideInRight 0.5s ease-in;
+}
+.addedElementsWrapper .addedElement.expandOn div button {
+  border-radius: 0 18px 0 0;
+}
+.addedElementsWrapper .addedElement.expandOn .expandedProduct {
+  display: block !important;
+}
+@media (max-width: 650px) {
+  .addedElementsWrapper .addedElement {
+    flex-direction: column;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=home.css.map */

@@ -43,7 +43,6 @@ const LineChart = ({ foodObjectsDaysInMonth }) => {
     var proteinData = foodObjectsDaysInMonth.map((item) => item.proteins);
     var carbsData = foodObjectsDaysInMonth.map((item) => item.carbs);
     var fatsData = foodObjectsDaysInMonth.map((item) => item.fats);
-    console.log(labels);
     if (labels.length == 0) {
       labels = [0, 1];
       proteinData = [0, 0];
@@ -71,6 +70,7 @@ const LineChart = ({ foodObjectsDaysInMonth }) => {
   }, [foodObjectsDaysInMonth]);
 
   const options = {
+    maintainAspectRatio: false,
     animation: false,
     plugins: {
       legend: {

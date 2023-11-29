@@ -1,12 +1,15 @@
 $greenColor: rgb(4, 238, 4);
+
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
 
 .todayDivContainer {
+  min-width: 340px;
   box-sizing: border-box;
-  margin-top: 10px;
+  margin-top: 85px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   .todayDiv {
     color: black;
     margin: 10px 10px 0 0;
@@ -16,6 +19,8 @@ $greenColor: rgb(4, 238, 4);
     background: rgb(255, 255, 255);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border-radius: 10px;
+    animation: slideInLeft 0.5s ease-in; /* Domyślna animacja dla każdego elementu */
+
     p {
       font-size: 20px;
       font-family: Bebas Neue;
@@ -23,5 +28,48 @@ $greenColor: rgb(4, 238, 4);
         color: $greenColor;
       }
     }
+  }
+  @media (max-width: 1059px) {
+    .todayDiv {
+      max-width: 530px;
+      margin: 10px auto;
+      min-width: 330px;
+      width: 94%;
+      div {
+        display: flex;
+        justify-content: center;
+        canvas {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .todayDiv:nth-child(even) {
+    animation: slideInRight 0.5s ease-in; /* Animacja dla co drugiego elementu */
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

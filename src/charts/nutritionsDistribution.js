@@ -18,6 +18,20 @@ const NutritionsDistribution = ({ foodObjectsDaysInMonth }) => {
       ],
     });
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     var container = [0, 0, 0];
     foodObjectsDaysInMonth.map((DayInMonth) => {
@@ -45,9 +59,13 @@ const NutritionsDistribution = ({ foodObjectsDaysInMonth }) => {
         },
       ],
     });
-  }, [foodObjectsDaysInMonth]);
+  }, [foodObjectsDaysInMonth, windowWidth]);
 
-  const options = {};
+  const options = {
+    legend: {
+      display: false,
+    },
+  };
 
   return (
     <div>

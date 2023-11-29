@@ -137,6 +137,18 @@ const Home = ({ foodObjects, setFoodObjects }) => {
     setFoodObjects(objectContainer);
   };
 
+  const handleExpand = (id) => {
+    // console.log("hello");
+    // var elementsToExpand = document.querySelectorAll(
+    //   ".addedElementsWrapper " + "#" + id
+    // );
+
+    // Array.from(elementsToExpand).forEach((elementToExpand) => {
+    //   elementToExpand.classList.toggle("expandOn");
+    // });
+    var elementToExpand = document.getElementById(id);
+    elementToExpand.classList.toggle("expandOn");
+  };
   const handleDelete = (idOfItem) => {
     localStorage.removeItem(idOfItem);
     sortKeys();
@@ -172,7 +184,11 @@ const Home = ({ foodObjects, setFoodObjects }) => {
         placeholder="Zawartość tłuszczy w gramach"
       />
       <button onClick={addElementHandler}>DODAJ</button>
-      <Products foodObjects={foodObjects} handleDelete={handleDelete} />
+      <Products
+        foodObjects={foodObjects}
+        handleDelete={handleDelete}
+        handleExpand={handleExpand}
+      />
     </div>
   );
 };

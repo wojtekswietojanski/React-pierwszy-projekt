@@ -2,16 +2,26 @@ $greenColor: rgb(4, 238, 4);
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
 
 .navbar {
-  h2 {
-    margin-left: 10px;
-    font-size: 25px;
-  }
+  z-index: 10;
+  position: fixed;
+  top: 0px;
   width: 100%;
   background-color: $greenColor;
   display: flex;
   justify-content: space-between;
   color: white;
-  div {
+  box-shadow: 0px 0px 10px black;
+  .hamburgerContainer {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
+  }
+  h2 {
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  #links {
     padding-top: 25px;
     button {
       overflow: hidden;
@@ -23,15 +33,57 @@ $greenColor: rgb(4, 238, 4);
       color: white;
       text-decoration: none;
       margin-right: 10px;
-
-      // Dodaj transition dla animacji
       transition: all 0.3s ease;
 
       &:hover {
-        // Dodaj efekt przesunięcia (transformacja)
-        transform: translateX(5px); // Możesz dostosować wartość według potrzeb
+        transform: translateY(-5px);
         border-bottom: 1px solid white;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    .hamburgerContainer {
+      position: relative;
+      padding: 0px;
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-top: 17px;
+      display: block;
+      width: 35px;
+      height: 40px;
+      border: none;
+      background-color: rgb(0, 0, 0, 0);
+    }
+    .bar0,
+    .bar1,
+    .bar2 {
+      height: 5px;
+      width: 100%;
+      background-color: white;
+      position: absolute;
+    }
+    .bar0 {
+      top: 5px;
+    }
+    .bar1 {
+      top: 17.5px;
+    }
+    .bar2 {
+      bottom: 5px;
+    }
+    #links {
+      display: none;
+    }
+    .mobileMenu {
+      display: block;
+      height: 200px;
+      width: 100%;
+      background-color: red;
     }
   }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
 #thisMonth {
   display: flex;
@@ -8,21 +9,62 @@
   margin-top: 25px;
 }
 #thisMonth #kcalChart {
+  margin-top: 80px;
   box-sizing: border-box;
   width: 100%;
   padding: 10px;
   box-shadow: 1px 3px 5px black;
   margin-bottom: 25px;
 }
+#thisMonth #kcalChart div canvas {
+  width: 100%;
+}
 #thisMonth .monthSmallerComponents {
   box-sizing: border-box;
   width: 49%;
   padding: 10px;
   box-shadow: 1px 3px 5px black;
+  animation: slideInRight 0.5s ease-in; /* Domyślna animacja dla każdego elementu */
+  margin-bottom: 25px;
+}
+#thisMonth .monthSmallerComponents div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 #thisMonth .monthSmallerComponents:first-child {
   margin-right: 1%;
 }
 #thisMonth .monthSmallerComponents p b {
   color: rgb(4, 238, 4);
+}
+#thisMonth .monthSmallerComponents:nth-child(even) {
+  animation: slideInLeft 0.5s ease-in; /* Animacja dla co drugiego elementu */
+}
+@media (width < 650px) {
+  #thisMonth .monthSmallerComponents {
+    width: 99%;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=thisMonth.css.map */
