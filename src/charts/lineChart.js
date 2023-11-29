@@ -71,6 +71,7 @@ const LineChart = ({ foodObjectsDaysInMonth }) => {
   }, [foodObjectsDaysInMonth]);
 
   const options = {
+    animation: false,
     plugins: {
       legend: {
         display: true,

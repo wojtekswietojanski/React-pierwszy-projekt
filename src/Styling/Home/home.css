@@ -49,4 +49,7 @@
   color: rgb(4, 238, 4);
   font-size: 20px;
   background-color: white;
+}
+.addedElementsWrapper .addedElement button:hover {
+  color: red;
 }/*# sourceMappingURL=home.css.map */

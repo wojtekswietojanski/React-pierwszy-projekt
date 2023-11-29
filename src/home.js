@@ -47,13 +47,21 @@ const Home = ({ foodObjects, setFoodObjects }) => {
   const addElementHandler = () => {
     const inputs = document.querySelectorAll(".home input");
     var inputContent = "";
+    var counter = 0;
     inputs.forEach((input) => {
       inputContent += input.value;
+      if (Number(input.value)) {
+        counter += 1;
+      }
       inputContent += "/";
     });
     inputContent += obecnaData();
-    localStorage.setItem(localStorage.length + 1, inputContent);
-    addObjectsToArrayFromLocalStorage();
+    if (counter === 4) {
+      localStorage.setItem(localStorage.length + 1, inputContent);
+      addObjectsToArrayFromLocalStorage();
+    } else {
+      window.alert("błędnie wprowadzone dane");
+    }
   };
 
   function sortKeys() {

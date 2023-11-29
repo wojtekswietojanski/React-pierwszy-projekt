@@ -51,6 +51,9 @@ $dataFont: Bebas Neue;
       color: $greenColor;
       font-size: 20px;
       background-color: white;
+      &:hover {
+        color: red;
+      }
     }
   }
 }

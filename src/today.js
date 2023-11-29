@@ -122,70 +122,73 @@ const Today = ({ foodObjects }) => {
 
         <p>
           Dzisiejsza podaż kalorii{" "}
-          {foodObjectsTodaySumarized.kcal - foodObjectsThisMonthAverage.kcal < 0
+          {Math.round(foodObjectsTodaySumarized.kcal) -
+            Math.round(foodObjectsThisMonthAverage.kcal) <
+          0
             ? `jest mniejsza o ${Math.abs(
-                foodObjectsTodaySumarized.kcal -
-                  foodObjectsThisMonthAverage.kcal
+                Math.round(foodObjectsTodaySumarized.kcal) -
+                  Math.round(foodObjectsThisMonthAverage.kcal)
               )} niż średnia podaż kalorii w tym miesiącu`
-            : foodObjectsTodaySumarized.kcal -
-                foodObjectsThisMonthAverage.kcal >
+            : Math.round(foodObjectsTodaySumarized.kcal) -
+                Math.round(foodObjectsThisMonthAverage.kcal) >
               0
             ? `jest większa o ${Math.abs(
-                foodObjectsTodaySumarized.kcal -
-                  foodObjectsThisMonthAverage.kcal
+                Math.round(foodObjectsTodaySumarized.kcal) -
+                  Math.round(foodObjectsThisMonthAverage.kcal)
               )} niż średnia podaż kalorii w tym miesiącu`
             : "jest równa średniej podaży kalorii w tym miesiącu"}
         </p>
         <p>
-          {" "}
           Dzisiejsza podaż białka{" "}
-          {foodObjectsTodaySumarized.proteins -
-            foodObjectsThisMonthAverage.proteins <
+          {Math.round(foodObjectsTodaySumarized.proteins) -
+            Math.round(foodObjectsThisMonthAverage.proteins) <
           0
             ? `jest mniejsza o ${Math.abs(
-                foodObjectsTodaySumarized.proteins -
-                  foodObjectsThisMonthAverage.proteins
+                Math.round(foodObjectsTodaySumarized.proteins) -
+                  Math.round(foodObjectsThisMonthAverage.proteins)
               )} niż średnia podaż białka w tym miesiącu`
-            : foodObjectsTodaySumarized.proteins -
-                foodObjectsThisMonthAverage.proteins >
+            : Math.round(foodObjectsTodaySumarized.proteins) -
+                Math.round(foodObjectsThisMonthAverage.proteins) >
               0
             ? `jest większa o ${Math.abs(
-                foodObjectsTodaySumarized.proteins -
-                  foodObjectsThisMonthAverage.proteins
+                Math.round(foodObjectsTodaySumarized.proteins) -
+                  Math.round(foodObjectsThisMonthAverage.proteins)
               )} niż średnia podaż białka w tym miesiącu`
             : "jest równa średniej podaży białka w tym miesiącu"}
         </p>
         <p>
           Dzisiejsza podaż węglowodanów{" "}
-          {foodObjectsTodaySumarized.carbs - foodObjectsThisMonthAverage.carbs <
+          {Math.round(foodObjectsTodaySumarized.carbs) -
+            Math.round(foodObjectsThisMonthAverage.carbs) <
           0
             ? `jest mniejsza o ${Math.abs(
-                foodObjectsTodaySumarized.carbs -
-                  foodObjectsThisMonthAverage.carbs
+                Math.round(foodObjectsTodaySumarized.carbs) -
+                  Math.round(foodObjectsThisMonthAverage.carbs)
               )} niż średnia podaż węglowodanów w tym miesiącu`
-            : foodObjectsTodaySumarized.carbs -
-                foodObjectsThisMonthAverage.carbs >
+            : Math.round(foodObjectsTodaySumarized.carbs) -
+                Math.round(foodObjectsThisMonthAverage.carbs) >
               0
             ? `jest większa o ${Math.abs(
-                foodObjectsTodaySumarized.carbs -
-                  foodObjectsThisMonthAverage.carbs
+                Math.round(foodObjectsTodaySumarized.carbs) -
+                  Math.round(foodObjectsThisMonthAverage.carbs)
               )} niż średnia podaż węglowodanów w tym miesiącu`
             : "jest równa średniej podaży węglowodanów w tym miesiącu"}
         </p>
-
         <p>
           Dzisiejsza podaż tłuszczu{" "}
-          {foodObjectsTodaySumarized.fats - foodObjectsThisMonthAverage.fats < 0
+          {Math.round(foodObjectsTodaySumarized.fats) -
+            Math.round(foodObjectsThisMonthAverage.fats) <
+          0
             ? `jest mniejsza o ${Math.abs(
-                foodObjectsTodaySumarized.fats -
-                  foodObjectsThisMonthAverage.fats
+                Math.round(foodObjectsTodaySumarized.fats) -
+                  Math.round(foodObjectsThisMonthAverage.fats)
               )} niż średnia podaż tłuszczu w tym miesiącu`
-            : foodObjectsTodaySumarized.fats -
-                foodObjectsThisMonthAverage.fats >
+            : Math.round(foodObjectsTodaySumarized.fats) -
+                Math.round(foodObjectsThisMonthAverage.fats) >
               0
             ? `jest większa o ${Math.abs(
-                foodObjectsTodaySumarized.fats -
-                  foodObjectsThisMonthAverage.fats
+                Math.round(foodObjectsTodaySumarized.fats) -
+                  Math.round(foodObjectsThisMonthAverage.fats)
               )} niż średnia podaż tłuszczu w tym miesiącu`
             : "jest równa średniej podaży tłuszczu w tym miesiącu"}
         </p>
