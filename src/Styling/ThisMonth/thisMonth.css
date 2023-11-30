@@ -14,6 +14,9 @@
   width: 100%;
   padding: 10px;
   box-shadow: 1px 3px 5px black;
+  background: rgba(252, 251, 251, 0.849);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
   margin-bottom: 25px;
 }
 #thisMonth #kcalChart div canvas {
@@ -24,6 +27,9 @@
   width: 49%;
   padding: 10px;
   box-shadow: 1px 3px 5px black;
+  background: rgba(252, 251, 251, 0.849);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
   animation: slideInRight 0.5s ease-in; /* Domyślna animacja dla każdego elementu */
   margin-bottom: 25px;
 }

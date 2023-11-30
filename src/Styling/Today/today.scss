@@ -16,7 +16,9 @@ $greenColor: rgb(4, 238, 4);
     padding: 10px;
     width: 47%;
     min-width: 500px;
-    background: rgb(255, 255, 255);
+    background: rgba(252, 251, 251, 0.849);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border-radius: 10px;
     animation: slideInLeft 0.5s ease-in; /* Domyślna animacja dla każdego elementu */

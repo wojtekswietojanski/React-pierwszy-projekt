@@ -18,8 +18,11 @@ $dataFont: Bebas Neue;
   border-radius: 0px 0px 20px 20px;
   input {
     padding: 5px;
+    background: rgba(252, 251, 251, 0.849);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
     border-radius: 10px;
-    border: 1px grey solid;
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
   button {
     padding: 5px;
@@ -71,8 +74,8 @@ $dataFont: Bebas Neue;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: rgba(18, 244, 10, 0.65);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: rgba(10, 248, 2, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(18, 244, 10, 0.35);
     backdrop-filter: blur(9.5px);
     -webkit-backdrop-filter: blur(9.5px);
     border-radius: 10px;
